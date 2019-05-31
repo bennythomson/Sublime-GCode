@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>nc</string>
+		<string>gcode</string>
+	</array>
+	<key>name</key>
+	<string>GCode</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>COMMENT</string>
+			<key>match</key>
+			<string>(\()(.*)(\))</string>
+			<key>name</key>
+			<string>comment.number-sign.nc</string>
+		</dict>
+		<dict>
+			<key>words</key>
+			<string>WORDS</string>
+			<key>match</key>
+			<string>(F|D|L|U|E|W|H|B)((-|*)[0-9]+(?:\.[0-9]*)?)</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>linenum</key>
+			<string>LINE NUMBERS</string>
+			<key>match</key>
+			<string>(N)(([0-9]*)?)([A-Z]*)</string>
+			<key>name</key>
+			<string>string.quoted.double</string>
+		</dict>
+		<dict>
+			<key>codes</key>
+			<string>MACHINE CODES</string>
+			<key>match</key>
+			<string>(G|S|M|T|O|%)[0-9]+</string>
+			<key>name</key>
+			<string>keyword.nc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>COORDINATES</string>
+			<key>match</key>
+			<string>(X|Y|Z|I|J|K|R)((-|*)[0-9]+(?:\.[0-9]*)?)</string>
+			<key>name</key>
+			<string>variable.language.MCPOST</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.gcode</string>
+	<key>uuid</key>
+	<string>32ab95f2-a394-46ee-9e83-9d93b9de5f19</string>
+</dict>
+</plist>
